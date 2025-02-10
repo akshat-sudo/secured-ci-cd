@@ -60,7 +60,7 @@ class CatalogActionBeanTest {
   @Test
   void getItemOutputNull() {
 
-    // Arrange
+    // Arrangethese
     final CatalogActionBean catalogActionBean = new CatalogActionBean();
 
     // Act and Assert result
