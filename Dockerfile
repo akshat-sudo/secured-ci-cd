@@ -1,13 +1,16 @@
 FROM openjdk:21
-
 WORKDIR /usr/src/myapp
 
-COPY . /usr/src/myapp
+# Pehle Pura Code Copy Karo
+COPY . .
 
-# Give execute permission to mvnw
+# Ensure Maven Wrapper Executable Hai
 RUN chmod +x mvnw
 
-# Run Maven build
+# (Important) `.mvn` Folder Ko Bhi Copy Karo
+COPY .mvn .mvn
+
+# Use Maven Wrapper for Build
 RUN ./mvnw clean package
 
-CMD ["java", "-jar", "target/your-app.jar"]  # Replace with actual jar name
+CMD ["java", "-jar", "target/your-app.jar"]
