@@ -67,7 +67,7 @@ pipeline{
         }
         stage("Image Scanning using TRIVY"){
             steps{
-                sh "trivy image priyanshu18/petshop:${BUILD_TAG} > trivy.txt"
+                sh "trivy image sudoakshat/petshop:${BUILD_TAG} > trivy.txt"
             }
         }
                 stage('QA testing Stage'){
